@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Token desain IMY UNNES: dipakai sebagai bg-gold, text-ink, font-serif, dst. */
+@theme {
+  --color-espresso: #181514;
+  --color-espresso-card: #211D1B;
+  --color-espresso-light: #2A2422;
+  --color-gold: #DEA810;
+  --color-gold-deep: #B98311;
+  --color-cream: #FBF9F6;
+  --color-cream-alt: #F5F2EB;
+  --color-ink: #23201F;
+  --color-muted: #66615C;
+
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
