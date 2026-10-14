@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import "tailwindcss";
 
 /* Token desain IMY UNNES: dipakai sebagai bg-gold, text-ink, font-serif, dst. */
@@ -11,7 +12,7 @@
   --color-cream-alt: #F5F2EB;
   --color-ink: #23201F;
   --color-muted: #66615C;
-
+  --color-gold-soft: rgba(222, 168, 16, 0.12);
   --font-serif: "EB Garamond", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
