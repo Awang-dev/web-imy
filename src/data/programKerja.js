@@ -1,4 +1,5 @@
-export const program = [
+// Empat kartu program kerja. Kartu tanpa foto memakai ikon (lihat ProgramKerja.jsx).
+const program = [
   {
     id: 1,
     badge: "Agenda Tahunan",
@@ -6,8 +7,7 @@ export const program = [
     title: "Makrab & Silaturahmi Guyub",
     description:
       "Pertemuan malam penuh kehangatan bersama mahasiswa Yogyakarta untuk saling mengakrabkan diri, berbagi kisah, dan menguatkan asa perkuliahan.",
-    image: null,
-    icon: "celebration",
+    image: "/images/program-makrab.webp",
   },
   {
     id: 2,
@@ -16,8 +16,7 @@ export const program = [
     title: "Srawung & Diskusi Santai",
     description:
       "Diskusi santai membahas langkah program kerja, dinamika perkuliahan di Sekaran, serta wadah curhat dan tips adaptasi kehidupan kampus.",
-    image: "/images/program-srawung.jpg",
-    icon: "forum",
+    image: "/images/program-srawung.webp",
   },
   {
     id: 3,
@@ -26,8 +25,7 @@ export const program = [
     title: "Ngumpul Guyub Sedulur",
     description:
       "Pertemuan lintas angkatan mahasiswa Yogyakarta di UNNES, wadah transfer pengalaman dari senior ke mahasiswa baru secara bersahaja.",
-    image: "/images/program-ngumpul.jpg",
-    icon: "groups",
+    image: "/images/program-ngumpul.webp",
   },
   {
     id: 4,
@@ -38,11 +36,8 @@ export const program = [
       "Edukasi nilai kearifan lokal Yogyakarta yang berpadu dengan kepemimpinan modern untuk mempersiapkan kader berkarakter luhur.",
     image: null,
     icon: "account_tree",
+    imageLabel: "Nguri-uri Kabudayan",
   },
 ];
 
-export const galeri = [
-  { id: 1, src: "/images/galeri-1.jpg", alt: "Srawung IMY UNNES di kafe" },
-  { id: 2, src: "/images/galeri-2.jpg", alt: "Diskusi santai sedulur IMY UNNES" },
-  { id: 3, src: "/images/galeri-3.jpg", alt: "Ngumpul bersama mahasiswa Yogyakarta di UNNES" },
-];
+export default program;

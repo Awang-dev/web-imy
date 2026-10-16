@@ -1,3 +1,4 @@
+// Dua kartu highlight di sisi kanan section Tentang Kami (sesuai mockup Stitch).
 const aboutHighlights = [
   {
     id: 1,
@@ -14,14 +15,6 @@ const aboutHighlights = [
     description:
       "Memegang teguh unggah-ungguh, sopan santun, serta etika luhur kearifan Yogyakarta seraya adaptif berkembang dalam dinamika iklim akademis kampus.",
     footer: "Nguri-uri Kabudayan",
-  },
-  {
-    id: 3,
-    icon: "groups",
-    title: "Wadah Bertumbuh & Berkarya",
-    description:
-      "Tempat mengembangkan potensi, memperluas relasi, bertukar informasi, dan meningkatkan pengalaman berorganisasi selama kuliah.",
-    footer: "Tumbuh Bersama Sedulur",
   },
 ];
 
