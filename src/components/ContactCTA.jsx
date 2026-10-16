@@ -1,4 +1,4 @@
-import { kontak, WA_URL, IG_URL } from "../data/kontak";
+import { kontak, ajakan, WA_URL, IG_URL } from "../data/kontak";
 
 const buttonWa =
   "inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-wider text-espresso shadow-lg transition-all duration-200 hover:bg-gold-deep hover:text-white";
@@ -32,6 +32,17 @@ function ContactCTA({ onOpenModal }) {
           Jadikan masa perkuliahanmu di Universitas Negeri Semarang lebih bermakna bersama saudara se-Yogyakarta.
           Hubungi narahubung kami, hadiri srawung terdekat, atau ikuti linimasa kegiatan terbaru.
         </p>
+
+        <div className="w-full max-w-3xl space-y-4 rounded-3xl border border-gold/20 bg-white/[0.04] p-8 text-left sm:p-10">
+          <h3 className="font-serif text-2xl text-gold sm:text-3xl">{ajakan.judul}</h3>
+          {ajakan.paragraf.map((teks) => (
+            <p key={teks} className="text-sm font-light leading-relaxed text-white/80 sm:text-base">
+              {teks}
+            </p>
+          ))}
+          <p className="border-t border-white/10 pt-4 font-serif text-lg italic text-gold">{ajakan.tagline}</p>
+          <p className="text-sm font-semibold text-white">{ajakan.penutup}</p>
+        </div>
 
         <div className="grid w-full max-w-3xl grid-cols-1 gap-5 pt-2 text-left sm:grid-cols-3">
           {kontak.map((item) => (
