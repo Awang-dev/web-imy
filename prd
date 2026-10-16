@@ -1,0 +1,278 @@
+# Product Requirements Document (PRD) — Internal
+
+| Item | Detail |
+|-|-|
+| **Nama Produk** | Website Profil imy |
+| **Versi Dokumen** | v0.1 |
+| **Status** | Draft |
+| **Penulis** | Tanaya Awang Ranumeru |
+| **Product Owner** | Muhammad Rizky Hidayatullah |
+| **Project Manager** | Tanaya Awang Ranumeru |
+| **Tanggal Dibuat** | 14-10-2026 |
+| **Terakhir Diperbarui** | 14-10-2026 |
+| **Dokumen Terkait** | PRD Eksternal — [tautan] |
+
+### Riwayat Perubahan
+
+| Versi | Tanggal | Penulis | Perubahan |
+|-|-|-|-|
+| v0.1 | 14-10-2026 | Tanaya Awang Ranumeru | Draft awal |
+
+---
+
+## 1. Ringkasan Produk
+
+imy membutuhkan media informasi online yang rapi dan mudah diakses. Proyek ini membangun website profil satu halaman yang menampilkan About Us, Visi Misi, Struktur pengurus, Program Kerja, dan ajakan untuk menghubungi pengurus. Targetnya adalah mahasiswa, anggota, dan pihak luar yang ingin mengenal Ormawa. Solusinya berupa website responsive berbasis React + Vite + Tailwind CSS yang dipublikasikan lewat Vercel. Detail lengkap ada di PRD Eksternal bagian 1, 2, dan 4.
+
+---
+
+## 2. Tujuan Bisnis
+
+### 2.1 Tujuan dan KPI Bisnis
+
+| No | Tujuan | Indikator Keberhasilan (KPI) | Target | Tenggat |
+|-|-|-|-|-|
+| 1 | Website dapat diakses publik | Link Vercel aktif dan bisa dibuka | 1 website live | [DD-MM-YYYY] |
+| 2 | Semua section dari jobdesk tampil | Jumlah section/halaman yang selesai (Navbar, Hero, About Us, Visi Misi, Struktur, Program Kerja, Contact CTA + Modal, Footer, 404) | 100% | [DD-MM-YYYY] |
+| 3 | Tampilan responsive dan ringan | Skor PageSpeed Mobile dan Desktop | ≥ 90 | [DD-MM-YYYY] |
+| 4 | Konten sesuai data resmi Ormawa | Data yang disetujui PIC | 100% | [DD-MM-YYYY] |
+
+### 2.2 Strategi dan Penyelarasan
+
+Website menjadi etalase resmi Ormawa sehingga informasi organisasi tidak hanya tersebar di media sosial. Proyek dikerjakan tanpa biaya lisensi (memakai paket gratis GitHub, Trello, dan Vercel) dan dibagi ke tiga peran supaya pengerjaan paralel: A (Project Manager), B (Foundation + Static), dan C (Dynamic + Assembly).
+
+### 2.3 Dampak Bisnis Jika Tidak Dikerjakan
+
+Ormawa tetap belum punya halaman informasi resmi yang terpusat, sehingga calon anggota dan mitra sulit menemukan profil, struktur, dan program kerja. Bagi kelompok, tugas proyek tidak terselesaikan sesuai ketentuan.
+
+---
+
+## 3. Kebutuhan Teknis dan Non-Fungsional
+
+### 3.1 Kebutuhan Non-Fungsional Detail
+
+| Kategori | Kebutuhan | Target Terukur | Cara Verifikasi |
+|-|-|-|-|
+| Performa | Website dimuat cepat | PageSpeed ≥ 90 (Mobile dan Desktop) | Uji PageSpeed Insights setelah deploy |
+| Keamanan | Tidak ada login dan tidak ada data pengguna yang disimpan; tidak ada rahasia di repository | Tidak ada API key/password di kode | Review Pull Request |
+| Ketersediaan | Website bisa dibuka setiap saat | Link Vercel aktif | Cek manual berkala |
+| Skalabilitas | Website statis, beban ditangani hosting | Tidak ada target khusus | - |
+| Kompatibilitas | Tampil benar di browser modern dan berbagai ukuran layar | Chrome, Edge, Firefox terbaru; layar HP, tablet, desktop | Uji manual per ukuran layar |
+| Kepatuhan | Foto dan nama pengurus ditampilkan dengan izin | Izin tertulis dari PIC | Konfirmasi di chat/dokumen |
+
+> Checklist keamanan lengkap dan *release gate* ada di bagian 4 (Security Check).
+
+### 3.2 Dependensi dan Aturan Teknis per Fitur
+
+| ID Fitur | Dependensi (sistem/API/tim) | Catatan Teknis | Estimasi Effort |
+|-|-|-|-|
+| F-01 Setup proyek (Vite, Tailwind, React Router, main.jsx, App.jsx, MainLayout.jsx, NotFound.jsx, vercel.json) | Tim B | Harus selesai lebih dulu karena menjadi fondasi tim C | [..] |
+| F-02 Navbar, Hero, Footer | Tim B; logo dan warna dari PIC | Navbar responsive, hamburger menu, anchor link | [..] |
+| F-03 File data (aboutHighlights, misi, struktur, programKerja) | Tim C; konten dari PIC | Konten ditulis di file `data/`, bukan di komponen | [..] |
+| F-04 AboutUs, VisiMisi, Struktur, ProgramKerja | Tim C; F-03 | Membaca data dari file `data/` | [..] |
+| F-05 ContactCTA + Modal | Tim C; kontak dari PIC | - | [..] |
+| F-06 Home.jsx | Tim C; F-02, F-04, F-05 | Merakit semua section | [..] |
+| F-07 Deploy Vercel | Tim A; semua PR sudah di-merge | Lewat dashboard Vercel, tanpa coding | [..] |
+
+### 3.3 Metrik MVP (Pengukuran Internal)
+
+| Metrik | Target | Sumber Data | Pemilik |
+|-|-|-|-|
+| Section selesai dan ter-merge | 100% | Trello (list Done) dan GitHub | Tanaya Awang Ranumeru |
+| Pull Request ter-review dan ter-merge | Semua PR dari B dan C | GitHub | Tanaya Awang Ranumeru |
+| Skor PageSpeed | ≥ 90 | PageSpeed Insights | Salma (B) |
+| Persetujuan konten oleh PIC | Ya | Chat/dokumen dari PIC | Tanaya Awang Ranumeru |
+
+### 3.4 Batasan Internal
+
+* Tidak ada backend, database, login, maupun panel admin; konten statis di file data.
+* Tidak ada anggaran; hanya memakai layanan gratis.
+* Kapasitas tim: 3 orang (A tanpa coding, B dan C sebagai developer).
+* Semua perubahan ke `main` wajib lewat Pull Request dan review Project Manager.
+
+---
+
+## 4. Security Check
+
+> Checklist ini wajib diselesaikan sebelum rilis. Item berstatus **Gagal** atau **Belum** pada tingkat Kritis/Tinggi menghentikan peluncuran (*release gate*).
+
+### 4.1 Klasifikasi Data
+
+| Jenis Data | Contoh | Klasifikasi | Perlindungan yang Diperlukan |
+|-|-|-|-|
+| Data publik Ormawa | Deskripsi, visi misi, program kerja | Publik | Tidak ada khusus |
+| Data pribadi pengurus | Nama, jabatan, foto | Terbatas | Izin PIC sebelum ditampilkan |
+| Kontak resmi | Email, Instagram, WhatsApp Ormawa | Publik | Hanya kontak resmi organisasi, bukan kontak pribadi |
+| Kredensial | Password, token | Rahasia | Tidak ada di kode; akun GitHub/Trello/Vercel memakai autentikasi masing-masing |
+
+### 4.2 Checklist Keamanan per Fase
+
+| No | Fase | Pemeriksaan | Tingkat | PIC | Status | Bukti / Catatan |
+|-|-|-|-|-|-|-|
+| S-01 | Desain | Threat modeling selesai dan ancaman utama terdokumentasi | Tinggi | Tanaya | Tidak Berlaku | Website statis tanpa data pengguna |
+| S-02 | Desain | Alur autentikasi dan otorisasi ditinjau | Tinggi | Tanaya | Tidak Berlaku | Tidak ada login |
+| S-03 | Desain | Prinsip least privilege pada akun dan repository | Sedang | Tanaya | Berjalan | Branch protection `main`, B dan C tidak push langsung |
+| S-04 | Pengembangan | Validasi dan sanitasi input | Kritis | Salma, Tama | Tidak Berlaku | Tidak ada input pengguna yang diproses; tinjau ulang jika form ditambahkan |
+| S-05 | Pengembangan | Rahasia tidak ada di kode | Kritis | Salma, Tama | Belum | Dicek saat review PR |
+| S-06 | Pengembangan | Password di-hash | Kritis | - | Tidak Berlaku | Tidak ada password |
+| S-07 | Pengembangan | Enkripsi in-transit (TLS) dan at-rest | Kritis | Tanaya | Belum | HTTPS diverifikasi setelah deploy di Vercel; at-rest tidak berlaku |
+| S-08 | Pengembangan | Manajemen sesi/token aman | Tinggi | - | Tidak Berlaku | Tidak ada sesi |
+| S-09 | Pengembangan | Log aktivitas tanpa data sensitif | Sedang | - | Tidak Berlaku | Tidak ada backend |
+| S-10 | Pengujian | SAST / analisis kode statis | Tinggi | Salma, Tama | Belum | Opsional: ESLint |
+| S-11 | Pengujian | Pemindaian dependensi (SCA) | Tinggi | Salma | Belum | Jalankan `npm audit` sebelum rilis |
+| S-12 | Pengujian | DAST / penetration test | Tinggi | - | Tidak Berlaku | Website statis tanpa alur transaksi |
+| S-13 | Pengujian | Pengujian hak akses antarpengguna | Kritis | - | Tidak Berlaku | Tidak ada akun pengguna |
+| S-14 | Pra-rilis | Konfigurasi produksi aman | Tinggi | Tanaya | Belum | Memakai build produksi; tidak ada file rahasia ter-commit |
+| S-15 | Pra-rilis | Backup dan pemulihan | Tinggi | Tanaya | Berjalan | Kode tersimpan di repository GitHub |
+| S-16 | Pra-rilis | Review privasi (izin foto/nama pengurus) | Tinggi | Tanaya | Belum | Konfirmasi tertulis PIC |
+| S-17 | Pasca-rilis | Monitoring dan alerting keamanan | Sedang | - | Tidak Berlaku | Cukup pengecekan manual berkala |
+| S-18 | Pasca-rilis | Rencana respons insiden | Tinggi | Tanaya | Belum | Jika website bermasalah: hubungi PM, rollback lewat Vercel |
+| S-19 | Pasca-rilis | Jadwal patching berkala | Sedang | Salma | Belum | `npm audit` berkala jika proyek masih dipelihara |
+
+> **Status:** Belum, Berjalan, Lulus, Gagal, Tidak Berlaku (sertakan alasan).
+> **Tingkat:** Kritis, Tinggi, Sedang.
+
+### 4.3 Penanganan Temuan Keamanan
+
+| Tingkat Keparahan | Batas Waktu Perbaikan | Keputusan Rilis |
+|-|-|-|
+| Kritis | Sebelum rilis | Rilis ditahan |
+| Tinggi | Sebelum rilis atau ada mitigasi yang disetujui | Rilis ditahan kecuali ada persetujuan risiko |
+| Sedang | 30 hari setelah rilis | Boleh rilis dengan rencana perbaikan |
+| Rendah | Backlog | Boleh rilis |
+
+### 4.4 Persetujuan Security Gate
+
+| Nama | Peran | Keputusan (Lulus / Lulus dengan Catatan / Tidak Lulus) | Tanggal |
+|-|-|-|-|
+| [Nama] | Tech Lead | | |
+| [Nama] | Security Officer / Reviewer | | |
+| Muhammad Rizky Hidayatullah | Product Owner | | |
+
+---
+
+## 5. Risiko dan Mitigasi
+
+| Risiko | Dampak | Probabilitas | Mitigasi | Pemilik |
+|-|-|-|-|-|
+| Konten dari PIC terlambat atau tidak lengkap | Tinggi | Sedang | Kirim daftar kebutuhan data sejak awal, beri tenggat, pakai data sementara (dummy) | Tanaya |
+| Tim C menunggu fondasi dari tim B | Sedang | Sedang | Tim B menyelesaikan setup lebih dulu dan segera merge; tim C mulai dari file data | Salma, Tama |
+| Konflik saat merge antar branch | Sedang | Sedang | Kerja di branch terpisah, `git pull` dari `main` sebelum mulai, PR kecil | Salma, Tama |
+| Review PR menumpuk di satu reviewer | Sedang | Sedang | Jadwalkan review harian; PR kecil per fitur | Tanaya |
+| Jadwal molor mendekati tenggat | Tinggi | Sedang | Pantau Trello harian dan koordinasi di grup | Tanaya |
+| Salah deploy atau routing 404 di Vercel | Sedang | Rendah | Pastikan `vercel.json` ada; uji link setelah deploy | Salma, Tanaya |
+
+---
+
+## 6. Sumber Daya
+
+### 6.1 Tim Proyek
+
+| Peran | Nama | Tanggung Jawab | Alokasi (%) |
+|-|-|-|-|
+| Product Owner | Muhammad Rizky Hidayatullah | Menyediakan dan menyetujui konten | [..] |
+| Project Manager (A) | Tanaya Awang Ranumeru | Repo GitHub, Trello, komunikasi PIC, prd.md, review dan merge PR, README, PengerjaanKelompok, PPT, deploy Vercel | [..] |
+| UI/UX Designer | - | Dirangkap Front-End Developer | - |
+| Frontend Developer 1 (B) | Salma | Setup Vite + Tailwind + React Router, layout, NotFound, vercel.json, Navbar, Hero, Footer | [..] |
+| Frontend Developer 2 (C) | Tama | File data, AboutUs, VisiMisi, Struktur, ProgramKerja, ContactCTA, Modal, Home | [..] |
+| Backend Developer | - | Tidak ada | - |
+| QA / Tester | - | Dilakukan lewat review PR dan uji manual | - |
+
+### 6.2 Teknologi dan Tools
+
+| Kategori | Tools / Teknologi |
+|-|-|
+| Frontend | React, Vite, React Router, Tailwind CSS |
+| Backend | Tidak ada |
+| Database | Tidak ada (data di file `data/`) |
+| Infrastruktur / Hosting | Vercel |
+| Desain | [Isi jika memakai Figma / Canva] |
+| Manajemen proyek | Trello, GitHub (branch dan Pull Request) |
+
+### 6.3 Anggaran
+
+| Komponen | Estimasi Biaya | Catatan |
+|-|-|-|
+| Sumber daya manusia | Rp0 | Tugas kelompok |
+| Infrastruktur dan lisensi | Rp0 | Diasumsikan memakai paket gratis GitHub, Trello, Vercel |
+| Lain-lain | Rp0 | |
+| **Total** | **Rp0** | |
+
+---
+
+## 7. Jadwal Proyek
+
+### 7.1 Milestone
+
+| Fase | Kegiatan | Mulai | Selesai | PIC | Status |
+|-|-|-|-|-|-|
+| 1. Discovery | Komunikasi PIC, pengumpulan konten, penyusunan prd.md | [..] | [..] | Tanaya | Berjalan |
+| 2. Desain | Penentuan tata letak section, warna, dan logo | [..] | [..] | Salma | Belum mulai |
+| 3. Pengembangan | Setup proyek, komponen section, file data, dan perakitan Home | [..] | [..] | Salma, Tama | Belum mulai |
+| 4. Pengujian | Review PR, uji responsive, `npm audit` (lihat bagian 4) | [..] | [..] | Tanaya | Belum mulai |
+| 5. Rilis | Deploy ke Vercel dan serah terima link ke PIC | [..] | [..] | Tanaya | Belum mulai |
+| 6. Evaluasi | README, PengerjaanKelompok, PPT, dan retrospektif | [..] | [..] | Tanaya | Belum mulai |
+
+### 7.2 Timeline
+
+```mermaid
+flowchart LR
+    A[Discovery<br/>PIC dan PRD] --> B[Desain<br/>Layout dan warna]
+    B --> C[Pengembangan<br/>B: Foundation, C: Data dan Section]
+    C --> D[Pengujian<br/>Review PR dan uji responsive]
+    D --> E[Rilis<br/>Deploy Vercel]
+    E --> F[Evaluasi<br/>README, PPT]
+```
+
+Tanggal pasti diisi di tabel 7.1 setelah tenggat proyek jelas.
+
+## 8. Alur Komunikasi
+
+### 8.1 Pemangku Kepentingan (Stakeholder)
+
+| Stakeholder | Peran | Kepentingan | Kontak |
+|-|-|-|-|
+| [Nama PIC Ormawa] | Product Owner / Mitra | Website sesuai identitas dan data Ormawa | [Email / Telepon] |
+| Tanaya Awang Ranumeru | Project Manager (A) | Proyek selesai tepat waktu | [Kontak] |
+| Salma | Front-End Developer 1 (B) | Fondasi dan komponen statis selesai | [Kontak] |
+| Tama | Front-End Developer 2 (C) | Data dan section dinamis selesai | [Kontak] |
+
+### 8.2 Rutinitas Komunikasi
+
+| Pertemuan / Laporan | Frekuensi | Peserta | Media | Tujuan |
+|-|-|-|-|-|
+| Koordinasi harian | Harian | A, B, C | Grup chat | Sinkronisasi progres |
+| Review Pull Request | Setiap PR masuk | A, B, C | GitHub | Review dan merge |
+| Laporan progres (screenshot Trello) | Mingguan | A, B, C | Trello | Ringkasan status |
+| Demo/konfirmasi ke PIC | Berkala [..] | A, PIC Ormawa | [..] | Konfirmasi konten dan tampilan |
+| Retrospektif | Setelah rilis | A, B, C | [..] | Perbaikan proses |
+
+### 8.3 Jalur Eskalasi
+
+1. Anggota tim (B/C) → Project Manager
+2. Project Manager → Product Owner (PIC Ormawa)
+
+### 8.4 Pengelolaan Perubahan (Internal)
+
+Permintaan perubahan dari PIC masuk lewat Project Manager, lalu dicek dampaknya terhadap jadwal dan pembagian tugas B dan C. Perubahan yang disetujui dibuat sebagai kartu baru di Trello, dikerjakan lewat branch, dan masuk ke `main` melalui Pull Request yang direview Project Manager. Perubahan yang berdampak ke isi dokumen mitra dicatat di PRD Eksternal.
+
+---
+
+## 9. Referensi Internal
+
+| No | Judul / Dokumen | Deskripsi | Tautan |
+|-|-|-|-|
+| 1 | Repository GitHub | Kode proyek dan branch protection | [URL] |
+| 2 | Board Trello | Pembagian dan progres tugas | [URL] |
+| 3 | Pembagian tugas A/B/C | Jobdesk Project Manager, Front-End 1, dan Front-End 2 | [URL / berkas] |
+| 4 | PRD Eksternal | Dokumen untuk mitra (PIC Ormawa) | [URL] |
+
+---
+
+## Persetujuan Dokumen
+
+| Nama | Peran | Tanda Tangan / Persetujuan | Tanggal |
+|-|-|-|-|
+| Tanaya Awang Ranumeru | Project Manager | | |
+| Muhammad Rizky Hidayatullah | PIC ORMAWA | | |
+| Archie | Tech Lead | | |
