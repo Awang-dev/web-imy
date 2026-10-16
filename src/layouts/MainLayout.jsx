@@ -12,7 +12,7 @@ function MainLayout() {
     <>
       <Navbar onOpenModal={() => setIsModalOpen(true)} />
       <main>
-        <Outlet />
+        <Outlet context={{ onOpenModal: () => setIsModalOpen(true) }} />
       </main>
       <Footer />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
