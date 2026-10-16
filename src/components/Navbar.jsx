@@ -1,4 +1,4 @@
-
+import logoImy from "../assets/logo_imy.png";
 import { useState } from "react";
 
 function Navbar() {
@@ -26,9 +26,11 @@ function Navbar() {
                     onClick={closeMenu}
                     className="group flex shrink-0 items-center gap-3.5"
                 >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 text-sm font-bold text-[#DEA810] transition-transform group-hover:scale-105">
-                        IMY
-                    </div>
+                    <img
+                        src={logoImy}
+                        alt="Logo IMY"
+                        className="h-11 w-11 object-contain transition-transform group-hover:scale-105"
+                    />
 
                     <div className="flex flex-col">
                         <span className="font-serif text-lg font-semibold leading-tight tracking-wide text-white">
@@ -125,7 +127,7 @@ function Navbar() {
                         ))}
 
                         <a
-                            href="https://wa.me/62895334571700"
+                            href="https://wa.me/62895379222419"
                             target="_blank"
                             rel="noreferrer"
                             onClick={closeMenu}

@@ -1,7 +1,7 @@
 
 function Hero() {
     return (
-        <section className="relative w-full overflow-hidden bg-[#181514] px-6 pb-20 pt-16 text-[#FBF9F6] sm:px-8 lg:pb-28 lg:pt-24">
+        <section className="relative w-full overflow-hidden bg-[#181514] px-6 pb-20 pt-28 text-[#FBF9F6] sm:px-8 lg:pb-28 lg:pt-32">
             {/* Dekorasi cahaya emas */}
             <div className="pointer-events-none absolute -right-32 -top-32 h-[550px] w-[550px] rounded-full bg-[#DEA810]/10 blur-3xl" />
             <div className="pointer-events-none absolute bottom-10 left-10 h-[450px] w-[450px] rounded-full bg-[#B98311]/10 blur-3xl" />
