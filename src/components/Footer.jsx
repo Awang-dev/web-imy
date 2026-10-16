@@ -51,7 +51,7 @@ function Footer() {
 
             <div className="space-y-1.5 text-xs text-white/60">
               <p>
-                <span className="text-gold">WhatsApp:</span> +62 895-3345-71700
+                <span className="text-gold">WhatsApp:</span> +62 895-3792-22419
               </p>
               <p>
                 <span className="text-gold">Surel:</span> kontak@imyunnes.or.id

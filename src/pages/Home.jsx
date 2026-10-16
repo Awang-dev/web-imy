@@ -22,6 +22,7 @@ export default function Home() {
       <Struktur />
       <ProgramKerja />
       <ContactCTA onOpenModal={onOpenModal} />
+
     </>
   );
 }
