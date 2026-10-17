@@ -1,0 +1,74 @@
+Pengerjaan Kelompok
+
+Dokumen ini mencatat pembagian tugas, alur kerja, dan progres pengerjaan Website Profil IMY UNNES oleh Kelompok 5.
+
+Repository: https://github.com/Awang-dev/web-imy_FP_Kelompok5
+Manajemen tugas: Trello, [URL board]
+Status terakhir diperbarui: 17-10-2026
+1. Anggota dan Peran
+Peran	Nama	Fokus
+A, Project Manager (tanpa coding)	Tanaya Awang Ranumeru	Koordinasi, dokumentasi, review dan merge PR, deploy
+B, Front-End Developer 1	Salma	Foundation dan komponen statis
+C, Front-End Developer 2	Tama	Data, section dinamis, dan perakitan halaman
+2. Pembagian Tugas dan Status
+
+Status mengacu pada board Trello (kartu bercentang hijau berarti selesai).
+
+A, Project Manager (Tanaya Awang Ranumeru)
+No	Tugas	Status
+1	Setup repo GitHub + branch protection	Selesai
+2	Setup Trello board	Selesai
+3	Komunikasi dengan PIC Ormawa	Selesai
+4	Isi prd	Selesai
+5	Screenshot Trello untuk progres proyek	Berjalan
+6	Review dan merge Pull Request dari B dan C	Berjalan
+7	Deploy ke Vercel	Selesai
+8	README.md	Selesai (dokumen ini dibuat bersama README)
+9	PengerjaanKelompok.md	Selesai
+10	PPT	Belum
+11	Koordinasi harian di grup	Berjalan
+B, Front-End Developer 1 (Salma)
+No	Tugas	Status
+1	Setup Vite + Tailwind + React Router	Selesai
+2	main.jsx, App.jsx, MainLayout.jsx	Selesai
+3	NotFound.jsx + vercel.json	Selesai
+4	Navbar.jsx (responsive, hamburger menu, anchor link)	Selesai
+5	Hero.jsx	Selesai
+6	Footer.jsx	Selesai
+C, Front-End Developer 2 (Tama)
+No	Tugas	Status
+1	Data: aboutHighlights.js, misi.js, struktur.js, programKerja.js	Selesai
+2	AboutUs.jsx + VisiMisi.jsx	Dalam proses
+3	Struktur.jsx + ProgramKerja.jsx	Dalam proses
+4	ContactCTA.jsx + Modal.jsx	Dalam proses
+5	Home.jsx (merakit semua section)	Dalam proses
+
+Catatan: ubah status tugas C menjadi "Selesai" setelah kartunya dicentang di Trello dan Pull Request-nya di-merge.
+
+3. Alur Kerja
+GitHub
+Branch main dilindungi: wajib lewat Pull Request dan minimal 1 approval.
+Anggota bekerja di branch masing-masing (contoh: feat/dynamic-sections) dan tidak push langsung ke main.
+Sebelum mulai bekerja, anggota menjalankan git pull dari main.
+Project Manager mereview, lalu me-merge Pull Request.
+Trello
+
+Board berisi list tugas per orang (to do A, to do B (Salma), to do C (Tama)). Tugas dipecah per kartu, lalu diberi label, member, dan due date. Alur kartu: To Do → In Progress → Review PR → Done.
+
+Komunikasi
+Koordinasi harian di grup chat.
+Komunikasi dengan PIC Ormawa dilakukan oleh Project Manager untuk meminta data konten (deskripsi, visi misi, struktur, program kerja, logo, dan kontak).
+4. Kendala dan Penyelesaian
+Kendala	Penyelesaian
+npm install gagal karena package.json tidak ditemukan	Folder yang dibuka bukan folder proyek. Pindah ke folder repo hasil clone, lalu jalankan ulang.
+Merge conflict pada src/pages/Home.jsx (versi lengkap dari feat/dynamic-sections berbeda dengan kerangka di main)	Konflik diselesaikan dengan mempertahankan versi lengkap, menghapus tanda konflik, lalu commit dan push.
+git push ditolak karena remote berisi commit yang belum ada di lokal	Menjalankan git pull lebih dulu sebelum push, tanpa --force.
+5. Riwayat Pengerjaan
+Pembagian peran, setup repo GitHub dan Trello
+Komunikasi dengan PIC Ormawa dan penyusunan PRD
+Tim B menyelesaikan setup proyek dan komponen statis
+Tim C mengerjakan data dan section dinamis
+Penyelesaian merge conflict Home.jsx dan review Pull Request
+Deploy ke Vercel
+README, PengerjaanKelompok, dan PPT
+6. Bukti Progres
